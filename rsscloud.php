@@ -12,7 +12,7 @@ Author URI: http://josephscott.org/
 # define( 'RSSCLOUD_NOTIFICATIONS_INSTANT', true );
 
 if ( !defined( 'RSSCLOUD_USER_AGENT' ) )
-	define( 'RSSCLOUD_USER_AGENT', 'WordPress/RSS Cloud 0.1' );
+	define( 'RSSCLOUD_USER_AGENT', 'WordPress/RSSCloud 0.1' );
 
 if ( !defined( 'RSSCLOUD_MAX_FAILURES' ) )
 	define( 'RSSCLOUD_MAX_FAILURES', 5 );
