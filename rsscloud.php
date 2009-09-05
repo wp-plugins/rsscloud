@@ -20,13 +20,13 @@ if ( !defined( 'RSSCLOUD_MAX_FAILURES' ) )
 if ( !defined( 'RSSCLOUD_HTTP_TIMEOUT' ) )
 	define( 'RSSCLOUD_HTTP_TIMEOUT', 3 );
 
-require dirname( __FILE__ ) . '/rsscloud/data-storage.php';
+require dirname( __FILE__ ) . '/data-storage.php';
 
 if ( !function_exists( 'rsscloud_hub_process_notification_request' ) )
-	require dirname( __FILE__ ) . '/rsscloud/notification-request.php';
+	require dirname( __FILE__ ) . '/notification-request.php';
 
 if ( !function_exists( 'rsscloud_schedule_post_notifications' ) )
-	require dirname( __FILE__ ) . '/rsscloud/send-post-notifications.php';
+	require dirname( __FILE__ ) . '/send-post-notifications.php';
 
 add_filter( 'query_vars', 'rsscloud_query_vars' );
 function rsscloud_query_vars( $vars ) {
