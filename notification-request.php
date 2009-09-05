@@ -12,7 +12,7 @@ function rsscloud_hub_process_notification_request( ) {
 	// Only support http-post
 	$protocol = 'http-post';
 	if ( !empty( $_POST['protocol'] ) && strtolower( $_POST['protocol'] ) !== 'http-post' )
-		rsscloud_notify_result( 'false', 'Only http-post notifications are support.' );
+		rsscloud_notify_result( 'false', 'Only http-post notifications are supported at this time.' );
 
 	// Assume port 80
 	$port = 80;
