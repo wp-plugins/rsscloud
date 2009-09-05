@@ -21,15 +21,19 @@ function rsscloud_send_post_notifications( ) {
 			if ( $n['protocol'] == 'http-post' ) {
 				$result = wp_remote_post( $notify_url, array( 'method' => 'POST', 'timeout' => RSSCLOUD_HTTP_TIMEOUT, 'user-agent' => RSSCLOUD_USER_AGENT, 'body' => array( 'url' => $rss2_url ) ) );
 
-				if ( $result['response']['code'] != 200 )
+				$need_update = false;
+				if ( $result['response']['code'] != 200 ) {
 					$notify[$rss2_url][$notify_url]['failure_count']++;
-
-				if ( $notify[$rss2_url][$notify_url]['failure_count'] > RSSCLOUD_MAX_FAILURES )
+					$need_update = true;
+				} elseif ( $notify[$rss2_url][$notify_url]['failure_count'] > RSSCLOUD_MAX_FAILURES ) {
 					$notify[$rss2_url][$notify_url]['status'] = 'suspended';
-
+					$need_update = true;
+				}
 			}
 		}
 	} // foreach
 
-	rsscloud_update_hub_notifications( $notify );
+	if ( $need_update )
+		rsscloud_update_hub_notifications( $notify );
+
 }
