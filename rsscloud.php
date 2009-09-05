@@ -51,37 +51,20 @@ function rsscloud_notify_result( $success, $msg ) {
 	exit;
 }
 
-function rsscloud_get_valid_protocols( ) {
-	return array( 'http-post' );
-}
-
 add_action( 'rss2_head', 'rsscloud_add_rss_cloud_element' );
 function rsscloud_add_rss_cloud_element( ) {
 	$cloud = parse_url( get_option( 'home' ) . '/?rsscloud=notify' );
 
 	$cloud['port']		= (int) $cloud['port'];
-	if ( empty( $cloud['port'] ) )
+	if ( !empty( $cloud['port'] ) )
 		$cloud['port'] = 80;
 
-	$cloud['path']	= preg_replace( '|[^a-zA-Z0-9\/\.]|', '', $cloud['path'] );
 	$cloud['path']	.= "?{$cloud['query']}";
 
 	$cloud['host']	= strtolower( $cloud['host'] );
-	$cloud['host']	= preg_replace( '|[^a-z\.]|', '', $cloud['host'] );
-
-	$register_procedure = get_option( 'rsscloud_ping_register_procedure' );
-	$register_procedure = preg_replace( '|[^a-zA-Z0-9\-]|', '', $register_procedure );
-
-	$valid_protocols = rsscloud_get_valid_protocols( );
-	$protocol = get_option( 'rsscloud_ping_protocol' );
-
-	$protocol = strtolower( $protocol );
-	if ( !in_array( $protocol, $valid_protocols ) ) {
-		$protocol = 'http-post';
-	}
 
 	echo "<cloud domain='{$cloud['host']}' port='{$cloud['port']}'";
-	echo " path='{$cloud['path']}' registerProcedure='{$register_procedure}'";
-	echo " protocol='{$protocol}' />";
+	echo " path='{$cloud['path']}' registerProcedure=''";
+	echo " protocol='http-post' />";
 	echo "\n";
 }
