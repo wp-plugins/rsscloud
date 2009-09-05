@@ -56,7 +56,7 @@ function rsscloud_add_rss_cloud_element( ) {
 	$cloud = parse_url( get_option( 'home' ) . '/?rsscloud=notify' );
 
 	$cloud['port']		= (int) $cloud['port'];
-	if ( !empty( $cloud['port'] ) )
+	if ( empty( $cloud['port'] ) )
 		$cloud['port'] = 80;
 
 	$cloud['path']	.= "?{$cloud['query']}";
