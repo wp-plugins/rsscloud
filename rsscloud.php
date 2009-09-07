@@ -3,7 +3,7 @@
 Plugin Name: RSS Cloud
 Plugin URI:
 Description: Ping RSS Cloud servers
-Version: 0.1
+Version: 0.2
 Author: Joseph Scott
 Author URI: http://josephscott.org/
  */
