@@ -27,7 +27,7 @@ function rsscloud_hub_process_notification_request( ) {
 
 	// Process each URL request: url1, url2, url3 ... urlN
 	$rss2_url = get_bloginfo( 'rss2_url' );
-	$notify_url = $_SERVER['SERVER_ADDR'] . ':' . $port . $path;
+	$notify_url = $_SERVER['REMOTE_ADDR'] . ':' . $port . $path;
 	if ( !empty( $_SERVER['REMOTE_ADDR_ORIG'] ) )
 		$notify_url = $_SERVER['REMOTE_ADDR_ORIG'] . ':' . $port . $path;
 
