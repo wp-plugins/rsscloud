@@ -30,7 +30,7 @@ function rsscloud_hub_process_notification_request( ) {
 	$notify_url = $_SERVER['REMOTE_ADDR'] . ':' . $port . $path;
 
 	// Attempt a notification to see if it will work
-	$result = wp_remote_post( $notify_url, array( 'method' => 'POST', 'timeout' => RSSCLOUD_HTTP_TIMEOUT, 'user-agent' => RSSCLOUD_USER_AGENT, 'body' => array( 'url' => $_POST['url1'] ) ) );
+	$result = wp_remote_post( $notify_url, array( 'method' => 'POST', 'timeout' => RSSCLOUD_HTTP_TIMEOUT, 'user-agent' => RSSCLOUD_USER_AGENT, 'port' => $port, 'body' => array( 'url' => $_POST['url1'] ) ) );
 	if ( isset( $result->errors['http_request_failed'][0] ) )
 		rsscloud_notify_result( 'false', 'Error testing notification URL : ' . $result->errors['http_request_failed'][0] );
 	if ( $result['response']['code'] != 200 )

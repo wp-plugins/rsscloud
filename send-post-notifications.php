@@ -19,7 +19,12 @@ function rsscloud_send_post_notifications( ) {
 	foreach ( $notify[$rss2_url] as $notify_url => $n ) {
 		if ( $n['status'] == 'active' ) {
 			if ( $n['protocol'] == 'http-post' ) {
-				$result = wp_remote_post( $notify_url, array( 'method' => 'POST', 'timeout' => RSSCLOUD_HTTP_TIMEOUT, 'user-agent' => RSSCLOUD_USER_AGENT, 'body' => array( 'url' => $rss2_url ) ) );
+				$url = parse_url( $notify_url );
+				$port = 80;
+				if ( !empty( $url['port'] ) )
+					$port = $url['port'];
+
+				$result = wp_remote_post( $notify_url, array( 'method' => 'POST', 'timeout' => RSSCLOUD_HTTP_TIMEOUT, 'user-agent' => RSSCLOUD_USER_AGENT, 'port' => $port, 'body' => array( 'url' => $rss2_url ) ) );
 
 				$need_update = false;
 				if ( $result['response']['code'] != 200 ) {
