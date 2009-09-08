@@ -3,15 +3,20 @@ Contributors: josephscott
 Tags: rss
 Requires at least: 2.8
 Tested up to: 2.8
-Stable tag: 0.2
+Stable tag: 0.3
 
-Adds RSSCloud ( http://rsscloud.org/ ) capabilities to your RSS2 feed.
+Adds RSSCloud ( http://rsscloud.org/ ) capabilities to your RSS feed.
 
 == Description ==
 
-Adds RSSCloud ( http://rsscloud.org/ ) capabilities to your RSS2 feed.
+Adds RSSCloud ( http://rsscloud.org/ ) capabilities to your RSS feed.
 
 == Changelog ==
+
+= 0.3 =
+* Limit path characters
+* Fix typo
+* Small adjustment to plugin description
 
 = 0.2 =
 * Minor improvements and bug fixes

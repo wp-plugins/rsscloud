@@ -17,13 +17,13 @@ function rsscloud_hub_process_notification_request( ) {
 	// Assume port 80
 	$port = 80;
 	if ( !empty( $_POST['port'] ) )
-		$post = (int) $_POST['port'];
+		$port = (int) $_POST['port'];
 
 	// Path is required
 	if ( empty( $_POST['path'] ) )
 		rsscloud_notify_result( 'false', 'No path provided.' );
 
-	$path = $_POST['path'];
+	$path = str_replace( '@', '', $_POST['path'] );
 
 	// Process each URL request: url1, url2, url3 ... urlN
 	$rss2_url = get_bloginfo( 'rss2_url' );
