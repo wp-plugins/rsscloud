@@ -13,6 +13,9 @@ Adds RSSCloud ( http://rsscloud.org/ ) capabilities to your RSS feed.
 
 == Changelog ==
 
+= 0.3.1 =
+* Require notification path to start with a slash
+
 = 0.3 =
 * Limit path characters
 * Fix typo

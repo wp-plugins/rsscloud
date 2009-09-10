@@ -24,6 +24,8 @@ function rsscloud_hub_process_notification_request( ) {
 		rsscloud_notify_result( 'false', 'No path provided.' );
 
 	$path = str_replace( '@', '', $_POST['path'] );
+	if ( $path{0} != '/' )
+		$path = '/' . $path;
 
 	// Process each URL request: url1, url2, url3 ... urlN
 	$rss2_url = get_bloginfo( 'rss2_url' );
