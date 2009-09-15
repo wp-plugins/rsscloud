@@ -3,7 +3,7 @@ Contributors: josephscott
 Tags: rss
 Requires at least: 2.8
 Tested up to: 2.8
-Stable tag: 0.3
+Stable tag: 0.3.2
 
 Adds RSSCloud ( http://rsscloud.org/ ) capabilities to your RSS feed.
 
@@ -12,6 +12,9 @@ Adds RSSCloud ( http://rsscloud.org/ ) capabilities to your RSS feed.
 Adds RSSCloud ( http://rsscloud.org/ ) capabilities to your RSS feed.
 
 == Changelog ==
+
+= 0.3.2 =
+* Escape error text when a notification test has failed
 
 = 0.3.1 =
 * Require notification path to start with a slash
