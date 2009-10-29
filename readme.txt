@@ -30,7 +30,7 @@ Adds RSSCloud ( http://rsscloud.org/ ) capabilities to your RSS feed.
 * Add do_action() calls for certain events
 * Provide a failure response for update requests for any feed URL
   that isn't the feed URL for the blog
-* Accept any 2xxx HTTP status code for notifications
+* Accept any 2xx HTTP status code for notifications
 * Use RSSCLOUD_FEED_URL constant for the blog feed URL if it is defined
 
 = 0.3.2 =
