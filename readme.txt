@@ -17,6 +17,10 @@ Adds RSSCloud ( http://rsscloud.org/ ) capabilities to your RSS feed.
 * Limit domain characters
 
 = 0.4.0 =
+* Add support for the domain parameter in notification requests
+* Notification requests that include a domain parameter use HTTP GET that
+  inlcudes a challenge field that must be returned exactly as is in the body
+  of the response
 * Separate out the code for scheduling notifications and sending
   notifications, making it easier to replace just one or the other
 * Only update notification URL details if something in the full
