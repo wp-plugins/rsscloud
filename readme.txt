@@ -3,7 +3,7 @@ Contributors: josephscott
 Tags: rss
 Requires at least: 2.8
 Tested up to: 2.8
-Stable tag: 0.4.0
+Stable tag: 0.4.1
 
 Adds RSSCloud ( http://rsscloud.org/ ) capabilities to your RSS feed.
 
@@ -12,6 +12,9 @@ Adds RSSCloud ( http://rsscloud.org/ ) capabilities to your RSS feed.
 Adds RSSCloud ( http://rsscloud.org/ ) capabilities to your RSS feed.
 
 == Changelog ==
+
+= 0.4.1 =
+* Limit domain characters
 
 = 0.4.0 =
 * Separate out the code for scheduling notifications and sending

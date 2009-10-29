@@ -37,7 +37,8 @@ function rsscloud_hub_process_notification_request( ) {
 	$notify_url = $_SERVER['REMOTE_ADDR'] . ':' . $port . $path;
 
 	if ( !empty( $_POST['domain'] ) ) {
-		$notify_url = $_POST['domain'] . ':' . $port . $path;
+		$domain = str_replace( '@', '', $_POST['domain'] );
+		$notify_url = $domain . ':' . $port . $path;
 
 		$challenge = rsscloud_generate_challenge( );
 
